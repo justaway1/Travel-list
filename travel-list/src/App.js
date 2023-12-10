@@ -33,7 +33,7 @@ export default function App () {
           <Logo />
           <Form onAddItems={handleAddItems} />
           <PackingList items={items} />
-          <Stats items={items.length} />
+          <Stats items={items} />
         </ItemsContext.Provider>
       </checkContext.Provider>
     </div>
