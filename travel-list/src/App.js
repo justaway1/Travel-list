@@ -26,13 +26,20 @@ export default function App () {
     )
   }
 
+  function handleList () {
+    const deleteList = window.confirm(
+      'Are you sure you want to delete Everything?'
+    )
+    if (deleteList) setItems([])
+  }
+
   return (
     <div className='app'>
       <checkContext.Provider value={handleCheckBox}>
         <ItemsContext.Provider value={handleRemoveItems}>
           <Logo />
           <Form onAddItems={handleAddItems} />
-          <PackingList items={items} />
+          <PackingList items={items} onHandleList={handleList} />
           <Stats items={items} />
         </ItemsContext.Provider>
       </checkContext.Provider>
